@@ -84,7 +84,15 @@
       "left": 416.8,
       "rotate": 90,
       "attrs": { "color": "red", "xray": "1" }
-    }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 256,
+      "left": -426.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 192.76, "left": -499.2, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX0", "$serialMonitor:RX", "", [] ],
@@ -111,7 +119,11 @@
     [ "esp:D22", "btn8:1.r", "purple", [ "h18.9", "v-67.5", "h182.4", "v67.2" ] ],
     [ "esp:D23", "btn9:1.r", "purple", [ "h9.3", "v-76.7", "h230.4", "v86.4" ] ],
     [ "btn10:1.r", "esp:D27", "purple", [ "h19.2", "v-114.4", "h-412.8", "v192.3" ] ],
-    [ "btn8:2.r", "esp:GND.1", "black", [ "v77.6", "h-163.3" ] ]
+    [ "btn8:2.r", "esp:GND.1", "black", [ "v77.6", "h-163.3" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-19.2", "v-67.2", "h499.2", "v-134.4" ] ],
+    [ "lcd1:SCL", "esp:D25", "gold", [ "h-28.8", "v-297.3" ] ],
+    [ "lcd1:SDA", "esp:D26", "green", [ "h-38.4", "v-297.4" ] ],
+    [ "vcc1:VCC", "lcd1:VCC", "red", [ "v0" ] ]
   ],
   "dependencies": {}
 }
